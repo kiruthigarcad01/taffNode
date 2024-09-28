@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console Log Example</title>
+</head>
+<body>
+    <script>
+      function createPerson(highSalary,cibilScore,extraMsg){
+  if(typeof highSalary !=='boolean' || typeof cibilScore !== 'boolean'){
+    throw new Error ("Invalid customer : highsalary must be boolean value")
+    }
+
+    
+    let resultMsg = (highSalary && cibilScore) ? "eligible" : "not eligible"
+    return{
+      result : resultMsg,
+      extra : extraMsg
+  };
+
+}
+try{
+  let res = createPerson(true,true,"congrats")
+  console.log(res)
+}
+catch(error){
+  console.error(error.msg)
+}
+
+</script>
+</body>
+</html>
