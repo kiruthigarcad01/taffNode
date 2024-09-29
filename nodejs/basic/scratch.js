@@ -2253,30 +2253,62 @@
 // Product: 70
 // Calculation complete!
 
-function startFun(a,b,firstFun){
-    console.log("Starting calculation...")
-    let firstVal = firstFun(a * b)
-    secondFun(firstVal)
-    sum(added)   
-
-}
-function firstFun(firstVal){
-    console.log("First number :",firstVal)
-    let secondVal = firstVal - 3
-    return secondVal
+// function startFun(a,b){
+//     console.log("Starting calculation...")
+//     let firstVal = firstFun(a * b)
+//     let secondVal = secondFun(firstVal)
+//     let merged = sum(firstVal,secondVal)
+//     let finalRes = Product(merged)
+//     console.log("Final Result:", finalRes) 
+//     console.log("Calculation complete..")
+//     return finalRes
     
-}
-function secondFun(secondVal){
-    console.log("Second number :",secondVal)
-    let added = firstVal+ secondVal
-    return added
-           
-}
-function sum(added){
-    console.log("Sum :",added)
+// }
+// function firstFun(firstVal){
+//     console.log("First number :",firstVal)
+//     let secondVal = (firstVal - 3)
+//     return secondVal   
+// }
+// function secondFun(secondVal){
+//     console.log("Second Number :",secondVal) 
+//     return secondVal 
+// }
+// function sum(firstVal,secondVal){
+   
+//     let merged = firstVal + secondVal + 3
+//     console.log("Sum :",merged)
+//     return merged
+// }
+// function Product(merged){
+//     let finalRes = merged + 53
+//     return finalRes
+// }
+// startFun(5,2,firstFun)
+
+function startCalculation(a, b) {
+    console.log("Starting calculation...");
+    console.log("First number:", a);
+    console.log("Second number:", b);
+    
+    let sumResult = sum(a, b);
+    let productResult = product(a, b);
+    
+    console.log("Calculation complete!");
+    
+    return { sum: sumResult, product: productResult };
 }
 
-startFun(5,2,firstFun)
+function sum(a, b) {
+    let result = a + b;
+    console.log("Sum:", result);
+    return result;
+}
 
+function product(a, b) {
+    let result = a * b;
+    console.log("Product:", result);
+    return result;
+}
 
+startCalculation(10, 7);
  
