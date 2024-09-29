@@ -2208,6 +2208,46 @@
 // console.log(stringRepresentation)
 
 
+//callback 
+// function mainFunction(callback){
+ 
+//     setTimeout(function(){
+//       callback ("Operation is complete")  
+//     },1000);
+//     console.log("Performing task....")   
+// }
+// function callbackFuction(result){
+//  console.log("Result :",result)   
+// }
+// mainFunction(callbackFuction);
+
+function main(a,b,operation){
+    console.log("adding numbers")
+    
+    setTimeout(function(){
+       const result = operation(a+b)
+       map(result)
+       some(result > 8)
+       
+    },2000);
+   
+}
+function add(res){
+    console.log("added result :",res)
+    let doubled = res * 2
+    return doubled   
+}
+function map(result){
+    console.log("doubled:",result)
+}
+
+function some(boolean){
+  console.log("boolean :",boolean)
+}
+main(2,3,add)
+
+
+
 
 
  
