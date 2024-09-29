@@ -2221,33 +2221,62 @@
 // }
 // mainFunction(callbackFuction);
 
-function main(a,b,operation){
-    console.log("adding numbers")
+// function main(a,b,operation){
+//     console.log("adding numbers")
     
-    setTimeout(function(){
-       const result = operation(a+b)
-       map(result)
-       some(result > 8)
+//     setTimeout(function(){
+//        const result = operation(a-b)
+//        map(result)
+//        some(result > 5)
        
-    },2000);
+//     },3000);
    
+// }
+// function subtract(res){
+//     console.log("subtracted result :",res)
+//     let doubled = res * 3
+//     return doubled   
+// }
+// function map(result){
+//     console.log("doubled:",result)
+// }
+
+// function some(boolean){
+//   console.log("boolean :",boolean)
+// }
+// main(10,4,subtract)
+
+// Starting calculation...
+// First number: 10
+// Second number: 7
+// Sum: 17
+// Product: 70
+// Calculation complete!
+
+function startFun(a,b,firstFun){
+    console.log("Starting calculation...")
+    let firstVal = firstFun(a * b)
+    secondFun(firstVal)
+    sum(added)   
+
 }
-function add(res){
-    console.log("added result :",res)
-    let doubled = res * 2
-    return doubled   
+function firstFun(firstVal){
+    console.log("First number :",firstVal)
+    let secondVal = firstVal - 3
+    return secondVal
+    
 }
-function map(result){
-    console.log("doubled:",result)
+function secondFun(secondVal){
+    console.log("Second number :",secondVal)
+    let added = firstVal+ secondVal
+    return added
+           
+}
+function sum(added){
+    console.log("Sum :",added)
 }
 
-function some(boolean){
-  console.log("boolean :",boolean)
-}
-main(2,3,add)
-
-
-
+startFun(5,2,firstFun)
 
 
  
