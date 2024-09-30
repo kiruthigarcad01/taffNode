@@ -2343,33 +2343,90 @@
 //     })
 // })
 
-function uploadingVideo(videoData,callback){
-     console.log("Uploading the video...")
-     setTimeout(()=>{
-        console.log("Upload has done!")
-        callback(videoData)
-     },3000)
-}
-function publishingVideo(videoData,callback2){
-    console.log("Publishing the video..." )
-    setTimeout(()=>{
-        console.log("Publish has done")
-        callback2(videoData)
-    },2000)
-}
-function notifySub(videoData){
-    console.log("Notification sent..."  +videoData.title)
-}
-const data = {
-    title : "This is my video",
-    description : "its about hello youtube"
-}
-uploadingVideo(data,function(){
- publishingVideo(function(){
-    notifySub()
- })
-})
+// function uploadingVideo(videoData,callback){
+//      console.log("Uploading the video..." +videoData.title +" "+videoData.description) 
+//      setTimeout(()=>{
+//         console.log("Upload has done!")
+//         callback(videoData)
+//      },3000)
+// }
+// function publishingVideo(videoData,callback2){
+//     console.log("Publishing the video..." +videoData.title+" "+videoData.description)
+//     setTimeout(()=>{
+//         console.log("Publish has done")
+//         callback2(videoData)
+//     },2000)
+// }
+// function notifySub(videoData){
+//     console.log("Notification sent..." + videoData.title+ "and "+videoData.description)
+// }
+// const data = {
+//     title : "This is my video",
+//     description : "its about hello youtube"
+// }
+// uploadingVideo(data,function(uploadedData){
+//  publishingVideo(uploadedData,function(publishedData){
+//     notifySub(publishedData)
+//  })
+// })
+
+// let reachA = new Promise((resolve,reject)=>{
+//     const reached = true
+//     if(reached){
+//         setTimeout(resolve,3000,"kiki has reached")
+//     }
+//     else{
+//         reject(new Error("Not reached"))
+//     }
+// });
+// async function PromiseFun(){
+//     try{
+//         console.log("Reetu has reached")
+//     const result = await reachA
+//     console.log(result)
+//     }
+//     catch{
+//         console.error(error.message)
+//     }
+//     finally{
+//         console.log("am always execute")
+//     }
+    
+// }
+// PromiseFun();
 
 
-
-
+// let reachA = new Promise((resolve,reject)=>{
+//      const reached = true
+//      if(reached){
+//         setTimeout(resolve,3000, "Anu has reached")
+//      }
+//      else{
+//         reject("Anu has not reached")
+//      }
+//     })
+    
+//     let reachB = new Promise((resolve,reject)=>{
+//         const reached = true
+//         if(reached){
+//             setTimeout(resolve,2000, "krithika has reached")
+//         }
+//         else{
+//             reject("krithika has not reached")
+//         }
+//     })
+    
+//     let reachC = new Promise((resolve,reject)=>{
+//         const reached = false
+//         if(reached){
+//             setTimeout(resolve,1000, "tejaswi has reached")
+//         }
+//         else{
+//             reject("tejaswi has not reached")
+//         }
+//     })
+    
+//     Promise.all([reachA,reachB,reachC])
+//     .then((message)=>console.log(message))
+//     .catch((message)=>console.log(message))
+    
