@@ -2285,30 +2285,91 @@
 // }
 // startFun(5,2,firstFun)
 
-function startCalculation(a, b) {
-    console.log("Starting calculation...");
-    console.log("First number:", a);
-    console.log("Second number:", b);
+// function startCalculation(a, b) {
+//     console.log("Starting calculation...");
+//     console.log("First number:", a);
+//     console.log("Second number:", b);
     
-    let sumResult = sum(a, b);
-    let productResult = product(a, b);
+//     let sumResult = sum(a, b);
+//     let productResult = product(a, b);
     
-    console.log("Calculation complete!");
+//     console.log("Calculation complete!");
     
-    return { sum: sumResult, product: productResult };
-}
+//     return { sum: sumResult, product: productResult };
+// }
 
-function sum(a, b) {
-    let result = a + b;
-    console.log("Sum:", result);
-    return result;
-}
+// function sum(a, b) {
+//     let result = a + b;
+//     console.log("Sum:", result);
+//     return result;
+// }
 
-function product(a, b) {
-    let result = a * b;
-    console.log("Product:", result);
-    return result;
-}
+// function product(a, b) {
+//     let result = a * b;
+//     console.log("Product:", result);
+//     return result;
+// }
 
-startCalculation(10, 7);
+// startCalculation(10, 7);
+
  
+//callback
+// function uploadingVideo(videoData,callback){
+//     console.log("Uploading the video --" + videoData.title)
+//     console.log("Uploading the video --" + videoData.description)
+//     setTimeout(()=>{
+//         console.log("Upload the video has done")
+//         callback(videoData);
+//     },3000)
+// }
+// function publishingVideo(videoData,callback2){
+//     console.log("Publishing the video")
+//     setTimeout(()=>{
+//         console.log(`Publish has done ${videoData.title},${videoData.description}`)
+//         callback2(videoData);
+//     },2000)
+// }
+// function notifySub(videoData){
+//     console.log(`Notification sent ${videoData.title},${videoData.description}`)
+// }
+
+// const data = {
+//     title : "This is my first video",
+//     description : "its about JavaScipt callabck"
+// };
+// uploadingVideo(data,function(uploadData){
+//     publishingVideo(uploadData,function(publishedData){
+//         notifySub(publishedData);
+//     })
+// })
+
+function uploadingVideo(videoData,callback){
+     console.log("Uploading the video...")
+     setTimeout(()=>{
+        console.log("Upload has done!")
+        callback(videoData)
+     },3000)
+}
+function publishingVideo(videoData,callback2){
+    console.log("Publishing the video..." )
+    setTimeout(()=>{
+        console.log("Publish has done")
+        callback2(videoData)
+    },2000)
+}
+function notifySub(videoData){
+    console.log("Notification sent..."  +videoData.title)
+}
+const data = {
+    title : "This is my video",
+    description : "its about hello youtube"
+}
+uploadingVideo(data,function(){
+ publishingVideo(function(){
+    notifySub()
+ })
+})
+
+
+
+
