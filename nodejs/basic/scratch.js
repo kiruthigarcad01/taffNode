@@ -2598,24 +2598,49 @@
 // .catch((message)=>console.log(message))
 
 //callback 
-const function1 = (val,callback) =>{
-    return callback(val + 10)//11
-}
-const callbackfn1 = (res,callback2)=>{
-    return callback2(res + 20)//31
-}
-const callbackfn2 =(res) =>{
-    return res
-}
-console.log("inpur",function1(1,(res)=>callbackfn1(res,callbackfn2)))
+// const function1 = (val,callback) =>{
+//     return callback(val + 10)//11
+// }
+// const callbackfn1 = (res,callback2)=>{
+//     return callback2(res + 20)//31
+// }
+// const callbackfn2 =(res) =>{
+//     return res
+// }
+// console.log("inpur",function1(1,(res)=>callbackfn1(res,callbackfn2)))
 
 //promise 
 
-const p1 = val =>new Promise ((resolve,reject)=>{
-    setTimeout(() => {
-        resolve(val + 10)
-    }, 1000);
-});
-p1(1).then(x => x +20).then(result =>console.log("added",result))
+// const p1 = val =>new Promise ((resolve,reject)=>{
+//     setTimeout(() => {
+//         resolve(val + 10)
+//     }, 1000);
+// });
+// p1(1).then(x => x +20).then(result =>console.log("added",result))
 
 
+//Simulating an API call using Promises
+function fetchData() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const data = { id: 1, name: "Kiruthika" };
+        const success = true;
+  
+        if (success) {
+          resolve(data); // Promise is fulfilled (successful)
+        } else {
+          reject("Failed to fetch data."); // Promise is rejected
+        }
+      }, 2000);
+    });
+  }
+  
+  console.log("Fetching data...");
+  fetchData()
+    .then((data) => {
+      console.log("Data received:", data);
+    })
+    .catch((error) => {
+      console.log("Error:", error);
+    });
+//Simulating an API call using async/await  
