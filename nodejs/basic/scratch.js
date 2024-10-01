@@ -2533,44 +2533,33 @@
 //     return res
 // }
 // console.log("added",fn1(1,(res) => callbackfn1(res,callbackfn2)))
-
-
-//promise 
-
-const p1 = val =>new Promise ((resolve,reject)=>{
-    setTimeout(() => {
-        resolve(val + 10)
-    }, 1000);
-});
-p1(1).then(x => x +20).then(result =>console.log("added",result))
-
 //error handling
-const reachA = new Promise((resolve,reject)=>{
-    const reached = true
-    if(reached){
-        setTimeout(() => {
-            resolve("Anu has reached")
-        }, 2000);
-    }
-    else{
-        reject(new Error("not reached"))
-    }
-});
-async function PromiseFun(){
-    try{
-        console.log("Hello")
-        const result = await reachA 
-        console.log(result)
-    }
-    catch(error){
-        console.error(error.message)
-    }
-    finally{
-        console.log("I am always execute")
-    }
+// const reachA = new Promise((resolve,reject)=>{
+//     const reached = true
+//     if(reached){
+//         setTimeout(() => {
+//             resolve("Anu has reached")
+//         }, 2000);
+//     }
+//     else{
+//         reject(new Error("not reached"))
+//     }
+// });
+// async function PromiseFun(){
+//     try{
+//         console.log("Hello")
+//         const result = await reachA 
+//         console.log(result)
+//     }
+//     catch(error){
+//         console.error(error.message)
+//     }
+//     finally{
+//         console.log("I am always execute")
+//     }
 
-}
-PromiseFun();
+// }
+// PromiseFun();
 
 //promise 
 // let reachA = new Promise((resolve,reject)=>{
@@ -2608,16 +2597,25 @@ PromiseFun();
 // .then((message)=>console.log(message))
 // .catch((message)=>console.log(message))
 
-// //callback 
-// const function1 = (val,callback) =>{
-//     return callback(val + 10)
-// }
-// const callbackfn1 = (res,callback2)=>{
-//     return callback2(res + 20)
-// }
-// const callbackfn2 =(res) =>{
-//     return res
-// }
-// console.log("inpur",function1(1,(res)=>callbackfn1(res,callbackfn2)))
+//callback 
+const function1 = (val,callback) =>{
+    return callback(val + 10)//11
+}
+const callbackfn1 = (res,callback2)=>{
+    return callback2(res + 20)//31
+}
+const callbackfn2 =(res) =>{
+    return res
+}
+console.log("inpur",function1(1,(res)=>callbackfn1(res,callbackfn2)))
+
+//promise 
+
+const p1 = val =>new Promise ((resolve,reject)=>{
+    setTimeout(() => {
+        resolve(val + 10)
+    }, 1000);
+});
+p1(1).then(x => x +20).then(result =>console.log("added",result))
 
 
