@@ -2430,3 +2430,194 @@
 //     .then((message)=>console.log(message))
 //     .catch((message)=>console.log(message))
     
+// const p1 = val => new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve(val+10)
+//     },1000);
+// })
+// p1(1).then(x => x + 20).then(result => console.log("added val is",result))
+
+// const p1 = val => new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//         resolve(val + 20)
+//     }, 1000);
+
+// })
+// p1(1).then(x => x + 10).then(result => console.log("input values ",result))
+
+// const f1 = (val, callback1) => {
+//     return callback1(val + 10); //11
+// }
+
+// const callbackfn1 = (res, callback2) => {
+    
+//     return callback2(res + 20)//31
+// }
+
+// const callbackfn2 = (res) => {
+//     return res; 
+// }
+
+
+// console.log("input + val", f1(1, (res) => callbackfn1(res, callbackfn2))); 
+
+// const reachA = new Promise((resolve,reject)=>{
+//     const reached = false
+//     if(reached){
+//         setTimeout(resolve,3000,"Anu has reached")
+//     }
+//     else{
+//         reject("not reached")
+//     }
+// });
+// const reachB = new Promise((resolve,reject)=>{
+//     const reached = false
+//     if(reached){
+//         setTimeout(resolve,2000,"Krithika has reached")
+//     }
+//     else{
+//         reject("not reached")
+//     }
+// });
+// const reachC = new Promise((resolve,reject)=>{
+//     const reached = false
+//     if(reached){
+//         setTimeout(resolve,1000,"Tejaswi has reached")
+//     }
+//     else{
+//         reject("not reached")
+//     }
+// });
+// Promise.any([reachA,reachB,reachC])
+// .then((message)=>console.log(message))
+// .catch((message)=>console.log(message))
+
+// const reachA = new Promise((resolve,reject)=>{
+//     const reached = true
+//     if(reached){
+//         setTimeout(resolve, 3000, "Anu has reached")
+//     }
+//     else{
+//         reject(new Error("Not reached"))
+//     }
+// });
+// async function PromiseFun(){
+//     try{
+//         console.log("Hi Reetu")
+//         const result = await reachA 
+//         console.log(result)
+//     }
+//     catch(error){
+//         console.error(error.message)
+//     }
+//     finally{
+//         console.log("Am always run")
+//     }
+// }
+// PromiseFun();
+
+// const f1 = val => new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//         resolve(val + 10)
+//     }, 1000);
+// });
+// f1(1).then(x => x + 20).then(result => console.log("value",result))
+
+// function fn1(val,callback1){
+//     return callback1(val + 10)
+// }
+// function callbackfn1(res,callback2){
+//     return callback2(res + 20)
+// }
+// function callbackfn2(res) {
+//     return res
+// }
+// console.log("added",fn1(1,(res) => callbackfn1(res,callbackfn2)))
+
+
+//promise 
+
+const p1 = val =>new Promise ((resolve,reject)=>{
+    setTimeout(() => {
+        resolve(val + 10)
+    }, 1000);
+});
+p1(1).then(x => x +20).then(result =>console.log("added",result))
+
+//error handling
+const reachA = new Promise((resolve,reject)=>{
+    const reached = true
+    if(reached){
+        setTimeout(() => {
+            resolve("Anu has reached")
+        }, 2000);
+    }
+    else{
+        reject(new Error("not reached"))
+    }
+});
+async function PromiseFun(){
+    try{
+        console.log("Hello")
+        const result = await reachA 
+        console.log(result)
+    }
+    catch(error){
+        console.error(error.message)
+    }
+    finally{
+        console.log("I am always execute")
+    }
+
+}
+PromiseFun();
+
+//promise 
+// let reachA = new Promise((resolve,reject)=>{
+//     const reached = true
+//     if(reached)
+//     {
+//         setTimeout(() => {
+//             resolve("Anu has reached")
+//         }, 3000);
+//     }
+
+// });
+
+// let reachB = new Promise((resolve,reject)=>{
+//     const reached = true
+//     if(reached)
+//     {
+//         setTimeout(() => {
+//             resolve("Krithika has reached")
+//         }, 2000);
+//     }
+
+// });
+// let reachC = new Promise((resolve,reject)=>{
+//     const reached = true
+//     if(reached)
+//     {
+//         setTimeout(() => {
+//             resolve("Tejaswi has reached")
+//         }, 1000);
+//     }
+
+// });
+// Promise.all([reachA,reachB,reachC])
+// .then((message)=>console.log(message))
+// .catch((message)=>console.log(message))
+
+// //callback 
+// const function1 = (val,callback) =>{
+//     return callback(val + 10)
+// }
+// const callbackfn1 = (res,callback2)=>{
+//     return callback2(res + 20)
+// }
+// const callbackfn2 =(res) =>{
+//     return res
+// }
+// console.log("inpur",function1(1,(res)=>callbackfn1(res,callbackfn2)))
+
+
