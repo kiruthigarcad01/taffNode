@@ -2624,7 +2624,7 @@ function fetchData() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         const data = { id: 1, name: "Kiruthika" };
-        const success = true;
+        const success = false;
   
         if (success) {
           resolve(data); // Promise is fulfilled (successful)
