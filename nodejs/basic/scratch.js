@@ -2619,28 +2619,120 @@
 // p1(1).then(x => x +20).then(result =>console.log("added",result))
 
 
-//Simulating an API call using Promises
-function fetchData() {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const data = { id: 1, name: "Kiruthika" };
-        const success = false;
+// async function fetchData() {
+//   return new Promise((resolve,reject)=>{
+    
+//     setTimeout(()=>{
+//       const data = {id : 1, name : 'Anu Krithika Tejaswi'}
+//       const success = false;
+//     if(success){
+//       resolve(data)
+//     }
+//     else{
+//       reject("failed to fetch data")
+//     }
+//     },2000)
+    
+
+//   });
+
+// }
+// console.log("Fetching data...")
+// fetchData()
+// .then((data)=>{
+//   console.log("Successfully data has been fetched from the server")
+// })
+// .catch((error)=>{
+//   console.log("Something went wrong",error)
+// })
+
+// async function fetchAndDisplayData(){
+//   console.log("Fetching Data....")
+// try{
+//   const data = await fetchData();
+//   console.log("Successfully data has been fetched from the server")
+// }
+// catch(error){
+//   console.log("Something went wrong",error)
+// }
   
-        if (success) {
-          resolve(data); // Promise is fulfilled (successful)
-        } else {
-          reject("Failed to fetch data."); // Promise is rejected
-        }
-      }, 2000);
-    });
-  }
-  
-  console.log("Fetching data...");
-  fetchData()
-    .then((data) => {
-      console.log("Data received:", data);
-    })
-    .catch((error) => {
-      console.log("Error:", error);
-    });
-//Simulating an API call using async/await  
+// }
+// fetchAndDisplayData();
+
+
+// function getWeatherData(city) {
+//   return new Promise((resolve, reject) => {
+//     console.log(`Fetching weather data for ${city}...`);
+//     setTimeout(() => {
+//       if (city.toLowerCase() === 'chennai') {
+//         resolve({ temperature: 32, condition: 'Sunny' });
+//       } else if (city.toLowerCase() === 'coimbatore') {
+//         resolve({ temperature: 28, condition: 'Cloudy' });
+//       } else {
+//         reject(`Unable to fetch weather data for ${city}`);
+//       }
+//     }, 2000); 
+//   });
+// }
+// function displayWeather(city) {
+//   getWeatherData(city)
+//     .then(data => {
+//       console.log(`Weather in ${city}:`);
+//       console.log(`Temperature: ${data.temperature}°C`);
+//       console.log(`Condition: ${data.condition}`);
+//     })
+//     .catch(error => {
+//       console.error(error);
+//     });
+// }
+
+// console.log("Weather App Starting...");
+// displayWeather('Chennai');
+// displayWeather('Coimbatore');
+// displayWeather('Mumbai');
+
+// function getWeatherData(city){
+//   return new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//         if(city.toLowerCase() === 'chennai'){
+//           resolve({temparature : 28, condition : 'sunny'})
+//         }
+//         else if(city.toLowerCase() === 'coimbatore'){
+//           resolve({temparature : 31, condition : 'cloudy'})
+//         }
+//         else {
+//           reject(`not able to predict for ${city}`)
+//         }
+//     }, 2000);
+//   })
+
+
+// }
+// async function displayWeather(city){
+ 
+//   try{
+//     const data = await getWeatherData(city)
+//     console.log(`Weather condition in ${city}`)
+//     console.log(`the temparature is ${data.temparature}`)
+//     console.log(`and the condition is ${data.condition}`)
+//   }
+//   catch(error){
+//     console.error(error)
+//   }  
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
