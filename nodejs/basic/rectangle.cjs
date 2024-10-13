@@ -536,3 +536,43 @@
 // }
 // fn();
 
+//area of rectangle 
+// function areaOfrectangle(length,width){
+//     return length * width
+// }
+
+// module.exports = areaOfrectangle;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

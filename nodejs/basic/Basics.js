@@ -1,10 +1,10 @@
 // console.log('welcome to nodejs');
 
 // //module 1
-// const os = require('os')
-// console.log(os.type()) 
-// console.log(os.version())
-// console.log(os.homedir()) 
+const os = require('os')
+console.log(os.type()) 
+console.log(os.version())
+console.log(os.homedir()) 
 
 // //module 2
 // const path = require('path')

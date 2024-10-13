@@ -1,0 +1,101 @@
+what is modules :
+----------------
+Modules which is way to organize / spilit your code into separate files.
+
+purpose of modules :
+====================
+ first and foremost important purpose of modules oraganizing the code by breaking 
+into smaller and manageable pieces.this oraniztion improves our code reuse, readbilty and maintability
+
+
+CommonJS modules provide a way to structure and manage code in Node.js.
+Use require() to import a module and module.exports to export from a module.
+
+it has 3 moduels
+================
+Built in modules
+1) Pre - Installed 
+2) Built in modules are pieace of code already they come and included with javaScript / programing run time environment
+so we no need to write / install again they are always ready to use and it helps to save our time and effort 
+like fs,os and http modules etc 
+fs - file system modules 
+http - to creating webServer we can use these modules by importing them without addition set up
+
+
+Custom Module 
+
+user defined 
+it is created by ourself 
+we can export out code / variable / function into another file / module by using import / require key word 
+Organize your own code better
+Share your code with others
+
+
+To use a third-party module, you usually need to install it first
+then import it into your project. 
+This is different from built-in modules (which are pre-installed) 
+and custom modules (which you write yourself).we can access by using npm installation 
+
+Amazon Alexa 
+1. Alexa Skills Kit (ASK):frame work irku which is used to voice 
+
+fs.readFile
+================
+	=>fs.readFile which is used to execute the file asynchrously 
+	=>it will keep the executing until read the file is completely 
+
+example : 
+	const fs = require('fs')
+	fs.readFile('demo.txt','utf-8',(err,data)=>{
+	if(err){
+	console.log("error",err)
+	return;
+        }
+	console.log("file read content",data)
+	
+});
+console.log("this part will be print before read the file content")
+
+fs.readFileSync
+===============
+	=>fs.readFileSync is the sync version of fs.readFile
+	=>it will block the other code until entire file in read
+
+const fs = require('fs')
+try{
+	const data = fs.readFileSync('demo1.txt','utf-8')
+	console.log("file read" sucessfully")
+}
+catch(error){
+	console.error("error",error)
+}
+console.log("it will exe after the entire file is read")
+
+fs.writeFile
+============
+	=>fs.writeFile means it will keep our program responsive 
+	=>it will allow to handle other task while writing the file
+	=>It will execute once the file write operation initiate
+
+const fs = require('fs')
+const content = "Anu from keralam"
+
+try{
+fs.writeFileSync('demo.txt',content,'utf-8')
+console.log("file successfully write")
+}
+catch(error){
+	console.error("error",error)
+}
+console.log("it will exe once the file has been write)
+
+fs.writeFileSync
+================
+	=>fs.writeFileSync is the sync version of fs.writeFile
+	=>it will used to ensure our file entirely read / not 
+	=>it will not execute anything that time it will block the main thread so performance may affect 
+const fs = require('fs')
+const content = "Anu sync"
+
+
+

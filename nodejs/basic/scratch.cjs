@@ -2597,6 +2597,8 @@
 // .then((message)=>console.log(message))
 // .catch((message)=>console.log(message))
 
+
+
 //callback 
 // const function1 = (val,callback) =>{
 //     return callback(val + 10)//11
@@ -2720,6 +2722,225 @@
 //     console.error(error)
 //   }  
 // }
+
+// console.log("start")
+
+//     setTimeout(()=>{
+//         console.log("timer funished")
+//     },0)
+    
+//     Promise.resolve().then(()=>{
+//      console.log("microtask")
+    
+//     })
+    
+//     console.log("end")
+// const os = require('os')
+// console.log("Platform" +os.platform())
+// console.log("Version" +os.release())
+// console.log("arch" +os.arch())
+
+// console.log(__filename);
+// console.log(__dirname);
+// console.log(path.dirname(__filename));
+
+// const fs = require('fs');
+// fs.readFile('demo.txt', 'utf-8', (err, data) => {
+//     if (err) {
+//         console.log("error", err);
+//         return;
+//     }
+//     console.log("readed", data);
+// });
+
+
+//http module
+
+// const http = require('http')
+// const port = 3000
+
+// const reqHandler = ((req,res)=>{
+    
+//         console.log(req.url)
+//     res.end("Hello world !!!")
+    
+// });
+
+// const server = http.createServer(reqHandler)
+// server.listen(port,(err)=>{
+//     if(err){
+//         return console.log("Something happens")
+//     }
+//     console.log(`Server is running on port http://localhost:${port}`)
+// });
+
+
+// const areaOfrectangle  = require('./rectangle.cjs')
+
+// const length = 5;
+// const width = 3;
+// const area = areaOfrectangle(length,width)
+// console.log(`Area of rectangle is ${area}`)
+
+//async
+// const fs = require('fs')
+// fs.readFile('demo1.txt','utf-8',(err,data)=>{
+//     if(err){
+//         console.log("getting error while reading",err)
+//     }
+//     console.log("read file content",data)
+// });
+// console.log("it will execute first before read file")
+
+//sync
+// const fs = require('fs')
+// try{
+//     data = fs.readFileSync('demo1.txt','utf-8')
+// console.log("file content",data)
+// }
+// catch(error){
+//     console.error("error",error)
+// }
+
+// console.log("it will execute after the entire file is read")
+//file write sync 
+
+// const fs = require('fs')
+// const content = "Anu Krithika Tejaswi from keralam"
+// try{
+//     fs.writeFileSync('demo1.txt',content,'utf-8')
+//     console.log("Sucessfully write done")
+// }
+// catch(error){
+//     console.log('Something went wring')
+// }
+
+// console.log("It will exe after file write done")
+
+
+//async 
+
+// const fs = require('fs')
+// const content = "Anu from keralam async"
+
+// fs.writeFile('demo1.txt',content,'utf-8',(error)=>{
+//     if(error){
+//         console.log("something happens",error)
+//     }
+//     console.log("Sucessfully am read")
+// })
+// console.log("it will exe after file write initiating")
+
+const http = require('http')
+const port = 3000
+
+
+const reqHandler = (req,res)=>{
+    console.log(req.url)
+    res.end("helllo world")
+}
+
+const server = http.createServer(reqHandler)
+server.listen(port,(err)=>{
+    if(err){
+        console.log("Something happens")
+    }
+    console.log(`server running on port${port}`)
+})
+//asyn
+
+const fs = require('fs')
+const content = "Hello am Anu Krithika Tejaswi"
+const newContent = "From Keralam"
+
+fs.writeFile('demo1.txt',content,'utf-8',(error)=>{
+    if(error){
+        console.log("geting error while writing")
+    }
+    else{
+        console.log("File has witten successfully")
+
+        fs.readFile('demo1.txt','utf-8',(error,data)=>{
+            if(error){
+                console.log("getting error while reading")
+            }
+            else{
+                console.log("read",data)
+                fs.appendFile('demo1.txt','\n' + newContent,(error)=>{
+                    if(error){
+                        console.log("error")
+                    }
+                    else{
+                        console.log("new line added")
+
+                        fs.rename('demo1.txt','modify1',(error)=>{
+                            if(error){
+                                console.log("error",error)
+                            }
+                            else{
+                                console.log("file name changed")
+                                fs.unlink('index.html',(error)=>{
+                                    if(error){
+                                        console.log("cant able to delete")
+                                    }
+                                    else{
+                                        console.log("sucessfully deleted")
+                                    }
+                                })
+                            }
+                        })
+                    }
+                });
+            }
+
+        });
+    }
+   
+});
+console.log("later will exe");
+
+
+
+
+// const fs = require('fs')
+// const content = "Anu Krithika Tejaswi"
+// const newContent = "from Keralam"
+
+// try{
+//     fs.writeFileSync('modify1.txt',content,'utf-8')
+//     console.log('File has been successfully write')
+
+//     let data = fs.readFileSync('modify1.txt','utf-8')
+//     console.log(`File has been successfully read ${data}`)
+
+//     data += newContent
+//     fs.writeFileSync('modify1.txt',data,'utf-8')
+//     console.log(`Successfully new line added ${data}`)
+
+//     console.log("New line added");
+
+//     fs.renameSync('modify1.txt','demo1.txt')
+//     console.log("File name renamed")
+
+//     fs.unlinkSync('dummy.txt')
+//     console.log("Successfully delete")
+
+// }
+// catch(error){
+//     console.log("error",error)
+// }
+// console.log("after the all process done it will exe")
+
+
+// const fs = require('fs')
+// const content = "Anu Krithika Tejaswi"
+
+
+
+
+
+
+
 
 
 
